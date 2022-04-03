@@ -11,7 +11,7 @@
         </div>
         <div class="content-image-pc">
             <el-row class="big-image-row" :gutter="50">
-                <el-col :span="8" v-for="item in roleList" :key="item.name" class="big-image-col">
+                <el-col :span="8" v-for="item in roleList" :key="item.id" class="big-image-col">
                     <div class="grid-content-big">
                         <img :src="item.imageUrl" alt="">
                         <div class="role-info">
@@ -37,7 +37,7 @@
         </div>
         <div class="content-image-ipad">
             <el-row class="big-image-row" :gutter="50">
-                <el-col :span="12" v-for="item in roleList" :key="item.name" class="big-image-col">
+                <el-col :span="12" v-for="item in roleList" :key="item.id" class="big-image-col">
                     <div class="grid-content-big">
                         <img :src="item.imageUrl" alt="">
                         <div class="role-info">
