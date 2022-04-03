@@ -7,7 +7,7 @@
                 mode="horizontal"
                 @select="handleSelectMenu"
                 active-text-color="#ffd04b">
-                <el-menu-item v-for="item in menuList" :key="item.name" :index="item.index">{{ item.name }}</el-menu-item>
+                <el-menu-item v-for="item in menuList" :key="item.name" :index="item.index" :disabled="item.disabled">{{ item.name }}</el-menu-item>
             </el-menu>
         </div>
         <div class="logo"></div>
@@ -25,32 +25,38 @@ export default Vue.extend({
                 {
                     name: 'HOME',
                     index: 'home',
-                    path: '/home'
+                    path: '/home',
+                    disabled: true
                 },
                 {
                     name: 'NEWS',
                     index: 'news',
-                    path: '/news'
+                    path: '/news',
+                    disabled: true
                 },
                 {
                     name: 'WEAPONS',
                     index: 'weapons',
-                    path: '/weapons'
+                    path: '/weapons',
+                    disabled: true
                 },
                 {
                     name: 'MAP',
                     index: 'map',
-                    path: '/map'
+                    path: '/map',
+                    disabled: true
                 },
                 {
                     name: 'CHARACTERS',
                     index: 'characters',
-                    path: '/characters'
+                    path: '/characters',
+                    disabled: false
                 },
                 {
                     name: 'WALLPAPER',
                     index: 'wallpaper',
-                    path: '/wallpaper'
+                    path: '/wallpaper',
+                    disabled: true
                 }
             ]
         }
@@ -104,13 +110,24 @@ export default Vue.extend({
     }
 }
 
-/** ipad  */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-}
-
-/** iphone */
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 1024px) {
+    .Header {
+        width: 100%;
+        height: 50px;
+        background-color: black
+        border-left: 10px solid #ffd04b
+        display: flex
+        align-items: center
+        .menu {
+            display: none
+        }
+        .logo {
+            background: url('../assets/logo.png') no-repeat;
+            background-size: 135px 40px
+            width: 135px;
+            height: 40px;
+            margin-left: 20px
+        }
+    }
 }
 </style>
